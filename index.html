@@ -16375,13 +16375,13 @@ dtype: object
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[13]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[4]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">## changing to category</span>
 <span class="c1">## &#39;company_category_code&#39;, &#39;company_country_code&#39;, &#39;company_state_code&#39;, &#39;investor_category_code&#39;, &#39;investor_country_code&#39;, &#39;investor_state_code&#39;, &#39;funding_round_type&#39;</span>
 
-<span class="n">crunch_inv</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;crunchbase-investments-mod.csv&quot;</span><span class="p">,</span> <span class="n">chunksize</span><span class="o">=</span><span class="mi">5000</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;ISO-8859-1&quot;</span><span class="p">)</span> 
+<span class="n">crunch_inv</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;crunchbase-investments.csv&quot;</span><span class="p">,</span> <span class="n">chunksize</span><span class="o">=</span><span class="mi">5000</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;ISO-8859-1&quot;</span><span class="p">)</span> 
 
 <span class="n">to_category_type</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;company_category_code&#39;</span><span class="p">,</span> <span class="s1">&#39;company_country_code&#39;</span><span class="p">,</span> 
                     <span class="s1">&#39;company_state_code&#39;</span><span class="p">,</span> <span class="s1">&#39;investor_category_code&#39;</span><span class="p">,</span> 
@@ -16396,7 +16396,6 @@ dtype: object
         <span class="n">chunk</span><span class="p">[</span><span class="n">col</span><span class="p">]</span> <span class="o">=</span> <span class="n">chunk</span><span class="p">[</span><span class="n">col</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;category&#39;</span><span class="p">)</span>
     <span class="c1">#chunk.to_csv(&quot;crunchbase-investments-mod.csv&quot;, mode=&#39;a&#39;, index=False, header= False) </span>
     <span class="n">memory_footprints</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">chunk</span><span class="o">.</span><span class="n">memory_usage</span><span class="p">(</span><span class="n">deep</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span><span class="o">/</span><span class="mi">1048576</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">chunk</span><span class="o">.</span><span class="n">dtypes</span><span class="p">)</span> 
 
     
 <span class="nb">print</span><span class="p">(</span><span class="nb">sum</span><span class="p">(</span><span class="n">memory_footprints</span><span class="p">))</span>
@@ -16419,216 +16418,7 @@ dtype: object
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>company_name                object
-company_category_code     category
-company_country_code      category
-company_state_code        category
-company_region              object
-company_city                object
-investor_name               object
-investor_category_code    category
-investor_country_code     category
-investor_state_code       category
-investor_region             object
-investor_city               object
-funding_round_type        category
-funded_day                  object
-funded_month                object
-funded_quarter              object
-funded_year                  int64
-raised_amount_usd          float64
-dtype: object
-company_name                object
-company_category_code     category
-company_country_code      category
-company_state_code        category
-company_region              object
-company_city                object
-investor_name               object
-investor_category_code    category
-investor_country_code     category
-investor_state_code       category
-investor_region             object
-investor_city               object
-funding_round_type        category
-funded_day                  object
-funded_month                object
-funded_quarter              object
-funded_year                  int64
-raised_amount_usd          float64
-dtype: object
-company_name                object
-company_category_code     category
-company_country_code      category
-company_state_code        category
-company_region              object
-company_city                object
-investor_name               object
-investor_category_code    category
-investor_country_code     category
-investor_state_code       category
-investor_region             object
-investor_city               object
-funding_round_type        category
-funded_day                  object
-funded_month                object
-funded_quarter              object
-funded_year                  int64
-raised_amount_usd          float64
-dtype: object
-company_name                object
-company_category_code     category
-company_country_code      category
-company_state_code        category
-company_region              object
-company_city                object
-investor_name               object
-investor_category_code    category
-investor_country_code     category
-investor_state_code       category
-investor_region             object
-investor_city               object
-funding_round_type        category
-funded_day                  object
-funded_month                object
-funded_quarter              object
-funded_year                  int64
-raised_amount_usd          float64
-dtype: object
-company_name                object
-company_category_code     category
-company_country_code      category
-company_state_code        category
-company_region              object
-company_city                object
-investor_name               object
-investor_category_code    category
-investor_country_code     category
-investor_state_code       category
-investor_region             object
-investor_city               object
-funding_round_type        category
-funded_day                  object
-funded_month                object
-funded_quarter              object
-funded_year                  int64
-raised_amount_usd          float64
-dtype: object
-company_name                object
-company_category_code     category
-company_country_code      category
-company_state_code        category
-company_region              object
-company_city                object
-investor_name               object
-investor_category_code    category
-investor_country_code     category
-investor_state_code       category
-investor_region             object
-investor_city               object
-funding_round_type        category
-funded_day                  object
-funded_month                object
-funded_quarter              object
-funded_year                  int64
-raised_amount_usd          float64
-dtype: object
-company_name                object
-company_category_code     category
-company_country_code      category
-company_state_code        category
-company_region              object
-company_city                object
-investor_name               object
-investor_category_code    category
-investor_country_code     category
-investor_state_code       category
-investor_region             object
-investor_city               object
-funding_round_type        category
-funded_day                  object
-funded_month                object
-funded_quarter              object
-funded_year                float64
-raised_amount_usd          float64
-dtype: object
-company_name                object
-company_category_code     category
-company_country_code      category
-company_state_code        category
-company_region              object
-company_city                object
-investor_name               object
-investor_category_code    category
-investor_country_code     category
-investor_state_code       category
-investor_region             object
-investor_city               object
-funding_round_type        category
-funded_day                  object
-funded_month                object
-funded_quarter              object
-funded_year                  int64
-raised_amount_usd          float64
-dtype: object
-company_name                object
-company_category_code     category
-company_country_code      category
-company_state_code        category
-company_region              object
-company_city                object
-investor_name               object
-investor_category_code    category
-investor_country_code     category
-investor_state_code       category
-investor_region             object
-investor_city               object
-funding_round_type        category
-funded_day                  object
-funded_month                object
-funded_quarter              object
-funded_year                  int64
-raised_amount_usd          float64
-dtype: object
-company_name                object
-company_category_code     category
-company_country_code      category
-company_state_code        category
-company_region              object
-company_city                object
-investor_name               object
-investor_category_code    category
-investor_country_code     category
-investor_state_code       category
-investor_region             object
-investor_city              float64
-funding_round_type        category
-funded_day                  object
-funded_month                object
-funded_quarter              object
-funded_year                  int64
-raised_amount_usd          float64
-dtype: object
-company_name                object
-company_category_code     category
-company_country_code      category
-company_state_code        category
-company_region              object
-company_city                object
-investor_name               object
-investor_category_code    category
-investor_country_code     category
-investor_state_code       category
-investor_region             object
-investor_city              float64
-funding_round_type        category
-funded_day                  object
-funded_month                object
-funded_quarter              object
-funded_year                  int64
-raised_amount_usd          float64
-dtype: object
-30.887590408325195
+<pre>39.50696277618408
 </pre>
 </div>
 </div>
@@ -16644,7 +16434,7 @@ dtype: object
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h4 id="wow-the-memory-footprint-went-down-to-just-30-mb-from-changing-a-few-to-category-type">wow the memory footprint went down to just 30 mb from changing a few to category type<a class="anchor-link" href="#wow-the-memory-footprint-went-down-to-just-30-mb-from-changing-a-few-to-category-type">&#182;</a></h4>
+<h4 id="wow-the-memory-footprint-went-down-to-just-39-MB-from-changing-a-few-to-category-type">wow the memory footprint went down to just 39 MB from changing a few to category type<a class="anchor-link" href="#wow-the-memory-footprint-went-down-to-just-39-MB-from-changing-a-few-to-category-type">&#182;</a></h4>
 </div>
 </div>
 </div>
